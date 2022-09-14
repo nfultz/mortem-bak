@@ -1,0 +1,20 @@
+#! /bin/bash
+
+
+
+mortem-bak () {
+
+
+  local BAK=${1:-"$HOME/projects/mortem-bak/"}
+  local MORTEM=${2:-"$HOME/.steam/debian-installation/steamapps/common/Jupiter Hell/mortem.txt"}
+
+  while inotifywait -e close_write "$MORTEM" ; do
+    cp --backup=numbered "$MORTEM" "$BAK";
+    
+  done
+
+}
+
+mortem-bak "$@"
+
+

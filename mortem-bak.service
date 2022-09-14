@@ -1,0 +1,10 @@
+[Unit]
+Description=Mortem Backup
+
+[Service]
+Type=simple
+Environment=HOME=%h
+ExecStart=%h/.local/bin/mortem-bak
+
+[Install]
+WantedBy=default.target
